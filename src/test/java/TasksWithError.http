@@ -1,0 +1,12 @@
+@site=http://localhost:8081
+
+GET {{site}}/tasks/300
+Accept: application/json
+
+###
+GET {{site}}/v1/tasks/300
+Accept: application/json
+
+###
+GET {{site}}/v2/tasks/300
+Accept: application/json, application/problem+json

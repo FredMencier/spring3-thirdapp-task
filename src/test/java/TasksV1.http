@@ -1,0 +1,4 @@
+@site=http://localhost:8081
+
+GET {{site}}/v1/tasks
+Accept: application/json

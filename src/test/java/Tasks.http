@@ -1,0 +1,46 @@
+@site=http://localhost:8081
+
+GET {{site}}/tasks
+Accept: application/json
+
+###
+GET {{site}}/tasks/102
+Accept: application/json
+
+### (erreur code 406)
+GET {{site}}/tasks/102
+Accept: text/xml
+
+###
+GET {{site}}/tasks/102
+Accept: application/json
+
+###
+GET {{site}}/tasks/search?status=TODO
+Accept: application/json
+x-version: v1.0
+
+###
+POST {{site}}/tasks
+Accept: application/json
+Content-Type: application/json
+
+{
+  "description" : "Faire le TP",
+  "statut" : "TODO",
+  "emailResponsable" : "thierry.durand@gmail.com"
+}
+
+###
+PUT {{site}}/tasks
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id" : 104,
+  "statut" : "DONE"
+}
+
+###
+DELETE {{site}}/tasks/105
+Accept: application/json
